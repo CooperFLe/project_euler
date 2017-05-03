@@ -1,0 +1,7 @@
+[package]
+name = "problem10"
+version = "0.1.0"
+authors = ["Cooper F. Le <cooperfle@utdallas.edu>"]
+
+[dependencies]
+time = "0.1"
