@@ -3,8 +3,7 @@ start = timeit.default_timer();
 
 def makeList(f):
     inFile = open(f,'r');
-    for line in inFile:
-        names = line;
+    names = inFile.read();
     names = names.strip().split(",");
     names.sort();
     for x in range(len(names)):
