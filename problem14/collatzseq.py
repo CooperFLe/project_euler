@@ -1,10 +1,16 @@
 import timeit;
 import sys;
 
+longest = 0;
+value = 0;
+
 start = timeit.default_timer();
+buf = [0]*1000000;
 def collatz(n):
     steps = 0;
     while(n >1):
+        if n < 1000000 and buf[n] != 0:
+            return steps + buf[n];
         if n%2 == 0:
             steps = steps + 1;
             n = n/2;
@@ -13,10 +19,9 @@ def collatz(n):
             n = 3 * n + 1;
     return steps;
 
-longest = 0;
-value = 0;
 for x in range(1000000):
     length = collatz(x);
+    buf[x] = length;
     if length > longest:
         longest = length;
         value = x;
