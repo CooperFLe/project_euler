@@ -1,4 +1,10 @@
+extern crate time;
+
+use std::time::SystemTime;
+
 fn main() {
+    let now = SystemTime::now();
+
     let mut array1: [u8; 1000] = [0;1000];
     let mut array2: [u8; 1000] = [0;1000];
     array1[0] = 1;
@@ -35,4 +41,14 @@ fn main() {
     }
 
     println!("Index: {}", index-2);
+
+    match now.elapsed() {
+        Ok(elapsed) => {
+            let nanos = elapsed.subsec_nanos() as u64;
+            println!("Time Taken: {}ms", (1000*1000*1000* elapsed.as_secs() + nanos)/(1000*1000));
+        }
+        Err(e) => {
+            println!("Error: {:?}", e);
+        }
+    }
 }

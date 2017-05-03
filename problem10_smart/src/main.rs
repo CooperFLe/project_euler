@@ -32,7 +32,8 @@ fn main() {
 
     match now.elapsed() {
         Ok(elapsed) => {
-            println!("Time Taken: {}", elapsed.as_secs());
+            let nanos = elapsed.subsec_nanos() as u64;
+            println!("Time Taken: {}ms", (1000*1000*1000* elapsed.as_secs() + nanos)/(1000*1000));
         }
         Err(e) => {
             println!("Error: {:?}", e);

@@ -23,7 +23,7 @@ fn main() {
 
     match now.elapsed() {
         Ok(elapsed) => {
-            println!("Time Taken: {}", elapsed.as_secs());
+            println!("Time Taken: {}sec", elapsed.as_secs());
         }
         Err(e) => {
             println!("Error: {:?}", e);
