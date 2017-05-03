@@ -1,3 +1,5 @@
+![Project Euler Badge](https://projecteuler.net/profile/CooperFLe.png)
+
 # project_euler
 Solutions to problems from https://projecteuler.net/
 
