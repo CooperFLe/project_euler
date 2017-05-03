@@ -5,7 +5,6 @@ use std::time::SystemTime;
 fn main() {
     let now = SystemTime::now();
     let mut sum: u64 = 0;
-    print!("Primes Found: 2");
     for x in 3..2000000 {
         let mut prime = true;
         let mut y = 2;
