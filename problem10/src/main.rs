@@ -23,7 +23,10 @@ fn main() {
 
     match now.elapsed() {
         Ok(elapsed) => {
-            println!("Time Taken: {}sec", elapsed.as_secs());
+            let time = elapsed.as_secs();
+            let min = time/60;
+            let sec = time%60;
+            println!("Time Taken: {}min {}sec", min, sec);
         }
         Err(e) => {
             println!("Error: {:?}", e);
